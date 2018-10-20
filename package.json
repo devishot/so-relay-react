@@ -17,6 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "download_schema": "apollo schema:download --endpoint=http://localhost:4000/graphql ./graphql-schema/schema.graphql",
     "relay": "relay-compiler --src ./src --schema ./graphql-schema/schema.graphql --extensions js jsx",
     "prestart": "node ./create_react_app__babel_relay",
     "prebuild": "node ./create_react_app__babel_relay",
