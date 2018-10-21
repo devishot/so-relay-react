@@ -14,12 +14,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:complete": "npm run-script prestart:graphql && npm run-script prestart && npm start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "download_schema": "apollo schema:download --endpoint=http://localhost:4000/graphql ./graphql-schema/schema.graphql",
+    "download": "graphql get-schema -e dev -p SmartOfficeV3",
     "relay": "relay-compiler --src ./src --schema ./graphql-schema/schema.graphql --extensions js jsx",
     "prestart": "node ./create_react_app__babel_relay",
+    "prestart:graphql": "npm run-script download && npm run-script relay",
     "prebuild": "node ./create_react_app__babel_relay",
     "pretest": "node ./create_react_app__babel_relay"
   },
