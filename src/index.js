@@ -5,12 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 import { App } from './modules/app';
-import { TimeRecordTable } from './modules/time_record';
+import { SingleTimeRecord } from './modules/time_record';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <App>
-    <TimeRecordTable />
+    <SingleTimeRecord id="B58CC80A-1BF5-4652-9559-97AC6C6545AD" />
   </App>
 , document.getElementById('root'));
 registerServiceWorker();
