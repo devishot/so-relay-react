@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 
-import { TimeRecordRow } from './';
+import { TimeRecordRow } from '.';
 
 export class TimeRecordTable extends React.Component {
   render() {

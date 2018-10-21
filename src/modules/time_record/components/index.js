@@ -1,2 +1,2 @@
-export * from "./time_record_row.jsx";
-export * from "./time_record_table.jsx";
+export * from "./TimeRecordRow.jsx";
+export * from "./TimeRecordTable.jsx";
