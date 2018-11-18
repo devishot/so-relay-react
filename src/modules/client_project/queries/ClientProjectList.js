@@ -41,7 +41,7 @@ export default createPaginationContainer(
                 projects(
                     first: $count
                     after: $cursor
-                ) @connection(key: "ClientProjects_client") {
+                ) @connection(key: "Client_projects") {
                     edges {
                         node {
                             id
