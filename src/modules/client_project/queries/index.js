@@ -1,1 +1,1 @@
-export { default as ClientProjectList } from "./ClientProjectList.jsx";
+export * from "./ClientProjectList";

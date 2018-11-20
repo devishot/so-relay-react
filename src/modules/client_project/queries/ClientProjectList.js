@@ -1,11 +1,11 @@
 import { createPaginationContainer, graphql } from 'react-relay';
-import { ClientProjectList } from '../components/ClientProjectList';
+import { ClientProjectList as component } from '../components/ClientProjectList';
 
-let loadMoreQuerySpec = graphql`
+let clientProjectListSpec = graphql`
     query ClientProjectListQuery(
+        $clientID: ID!
         $count: Int!
         $cursor: String
-        $clientID: ID!
     ) {
         client(id: $clientID) {
             ...ClientProjectList_client @arguments(count: $count, cursor: $cursor)
@@ -22,16 +22,15 @@ let connectionConfig = {
         return {
           count,
           cursor,
-          orderBy: fragmentVariables.orderBy,
           // userID isn't specified as an @argument for the fragment, but it should be a variable available for the fragment under the query root.
           clientID: fragmentVariables.clientID,
         };
     },
-    query: loadMoreQuerySpec
+    query: clientProjectListSpec
 }
 
-export default createPaginationContainer(
-    ClientProjectList,
+let ClientProjectList = createPaginationContainer(
+    component,
     {
         client: graphql`
             fragment ClientProjectList_client on Client @argumentDefinitions(
@@ -59,4 +58,6 @@ export default createPaginationContainer(
         `,
     },
     connectionConfig
-)
+);
+
+export { ClientProjectList, clientProjectListSpec }

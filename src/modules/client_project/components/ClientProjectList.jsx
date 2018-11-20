@@ -9,7 +9,7 @@ class ClientProjectList extends React.Component {
             edge => <ClientProjectListItem project={edge.node} key={edge.node.id} />
           )}
           <button
-            onPress={() => this._loadMore()}
+            onClick={() => this._loadMore()}
             title="Load More"
           />
         </div>
@@ -18,6 +18,8 @@ class ClientProjectList extends React.Component {
   
     _loadMore() {
       if (!this.props.relay.hasMore() || this.props.relay.isLoading()) {
+        !this.props.relay.hasMore() && alert('No more pages');
+        this.props.relay.isLoading() && alert('Still loading');
         return;
       }
   

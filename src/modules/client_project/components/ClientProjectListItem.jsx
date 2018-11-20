@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 class ClientProjectListItem extends React.Component {
 	render() {
+        var { project } = this.props;
 		return (
             <span>
-                {this.props.id} - 
-                {this.props.timestamp} - 
-                {this.props.title} - 
-                {this.props.description}
+                {project.id} - 
+                {project.timestamp} - 
+                {project.title} - 
+                {project.description}
             </span>
 		)
 	}
