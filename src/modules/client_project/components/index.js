@@ -1,2 +1,2 @@
 export * from "./ClientProjectList.jsx";
-export * from "./ClientProjectListItem.jsx";
+export * from "./ClientProjectTable.jsx";
