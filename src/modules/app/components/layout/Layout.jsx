@@ -11,10 +11,7 @@ export class Layout extends React.Component {
           </Col>
         </Row>
         <Row>
-          <Col md="3">
-            {this.props.left}
-          </Col>
-          <Col md={{ size: 8, offset: 1 }}>
+          <Col md={{ size: 10, offset: 1 }}>
             {this.props.right}
           </Col>
         </Row>
