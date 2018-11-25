@@ -1,5 +1,17 @@
+/* open-sans-regular - cyrillic_latin-ext_latin_cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+      url('/fonts/open-sans-v15-cyrillic_latin-ext_latin_cyrillic-ext-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('/fonts/open-sans-v15-cyrillic_latin-ext_latin_cyrillic-ext-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+
+  font-family: SegoeUI,'Segoe UI','Open Sans',Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
