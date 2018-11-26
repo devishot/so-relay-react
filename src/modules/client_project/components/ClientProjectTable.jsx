@@ -39,12 +39,12 @@ class ClientProjectTable extends React.Component {
 ClientProjectTable.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
-            id:             PropTypes.string,
-            timestamp:      PropTypes.string,
-            title:          PropTypes.string,
-            description:    PropTypes.string
+            id:             PropTypes.string.isRequired,
+            timestamp:      PropTypes.string.isRequired,
+            title:          PropTypes.string.isRequired,
+            description:    PropTypes.string.isRequired
         })
-    )
+    ).isRequired
 }
 
 export { ClientProjectTable };

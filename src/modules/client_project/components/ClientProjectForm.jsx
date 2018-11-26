@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import { Formik, Form } from 'formik';
 
 import { FormGroup, Label, Col } from 'reactstrap';
@@ -10,13 +12,11 @@ import Textarea from '@skbkontur/react-ui/Textarea';
 
 class ClientProjectForm extends React.Component {
     render() {
-        let project = this.props.project;
+        let { onSubmit, project } = this.props;
         return (
             <Formik
                 initialValues={project}
-                onSubmit={(values, actions) => {
-                    console.log(values, actions);
-                }}
+                onSubmit={onSubmit}
                 render={({ 
                     values,
                     handleChange, 
@@ -64,10 +64,21 @@ class ClientProjectForm extends React.Component {
     }
 }
 
+ClientProjectForm.propTypes = {
+    onSubmit:   PropTypes.func.isRequired,
+    project:    PropTypes.shape({
+        title:          PropTypes.string.isRequired,
+        description:    PropTypes.string.isRequired
+    }).isRequired,
+}
+
 ClientProjectForm.defaultProps = {
     project: {
         title: '',
         description: '',
+    },
+    onSubmit: (values, actions) => {
+        console.log(values, actions);
     }
 }
 
