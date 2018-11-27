@@ -5,9 +5,9 @@ import { QueryRenderer } from 'react-relay';
 import environment from '../../../base/Environment';
 import { 
     ClientProjectList, 
-    clientProjectListSpec 
+    clientProjectListQuerySpec 
 } from '../../client_project/queries/ClientProjectList';
-import { ClientProjectCreateSidePage } from '../../client_project/mutations/ClientProjectCreateSidePage';
+import { AddClientProjectSidePage } from '../../client_project/components/AddClientProjectSidePage';
 
 
 class ClientPage extends React.Component {
@@ -15,14 +15,14 @@ class ClientPage extends React.Component {
         let clientID = this.props.clientID;
         return (
             <div>
-                <ClientProjectCreateSidePage clientID={clientID} />
+                <AddClientProjectSidePage clientID={clientID} />
                 <QueryRenderer 
                     environment={environment}
                     variables={{
                         clientID,
                         count: 20,
                     }}
-                    query={clientProjectListSpec}
+                    query={clientProjectListQuerySpec}
                     render={({error, props}) => {
                         if (error) {
                             return <div>{error.message}</div>

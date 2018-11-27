@@ -1,7 +1,7 @@
 import { createPaginationContainer, graphql } from 'react-relay';
 import { ClientProjectList as component } from '../components/ClientProjectList';
 
-let clientProjectListSpec = graphql`
+let clientProjectListQuerySpec = graphql`
     query ClientProjectListQuery(
         $clientID: ID!
         $count: Int!
@@ -26,8 +26,10 @@ let connectionConfig = {
           clientID: fragmentVariables.clientID,
         };
     },
-    query: clientProjectListSpec
+    query: clientProjectListQuerySpec
 }
+
+const clientProjectListConnectionName = "Client_projects";
 
 let ClientProjectList = createPaginationContainer(
     component,
@@ -60,4 +62,4 @@ let ClientProjectList = createPaginationContainer(
     connectionConfig
 );
 
-export { ClientProjectList, clientProjectListSpec }
+export { ClientProjectList, clientProjectListQuerySpec, clientProjectListConnectionName }
