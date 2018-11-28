@@ -1,1 +1,1 @@
-export * from "./ClientProjectList";
+export * from "./ClientProjectListPagination";
