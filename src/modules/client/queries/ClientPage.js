@@ -4,8 +4,8 @@ import { QueryRenderer } from 'react-relay';
 
 import environment from '../../../base/Environment';
 import { 
-    clientProjectListPaginationQuery, 
-    ClientProjectListPagination
+    clientProjectTablePaginationQuery, 
+    ClientProjectTablePagination
 } from '../../client_project/queries';
 import { AddClientProjectSidePage } from '../../client_project/components';
 
@@ -22,12 +22,12 @@ class ClientPage extends React.Component {
                         clientID,
                         count: 20,
                     }}
-                    query={clientProjectListPaginationQuery}
+                    query={clientProjectTablePaginationQuery}
                     render={({error, props}) => {
                         if (error) {
                             return <div>{error.message}</div>
                         } else if (props) {
-                            return <ClientProjectListPagination client={props.client} />
+                            return <ClientProjectTablePagination client={props.client} />
                         }
                         return <div>Loading</div>
                     }}

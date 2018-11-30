@@ -1,6 +1,6 @@
 import { commitMutation, graphql } from 'react-relay';
 
-import { clientProjectListPaginationConnectionName } from '../queries';
+import { clientProjectTablePaginationConnectionName } from '../queries';
 
 
 const addClientProjectMutationSpec = graphql`
@@ -29,7 +29,7 @@ function addClientProjectCommit(environment, clientID, input) {
             type: 'RANGE_ADD',
             parentID: clientID,
             connectionInfo: [{
-                key: clientProjectListPaginationConnectionName,
+                key: clientProjectTablePaginationConnectionName,
                 rangeBehavior: 'append',
             }],
             edgeName: 'payloadEdge',

@@ -1,7 +1,7 @@
 import React from 'react';
-import { ClientProjectTable } from './';
+import { ClientProjectTable } from '.';
 
-class ClientProjectList extends React.Component {
+class ClientProjectTableWithLoadMore extends React.Component {
     render() {
         let data = this.props.client.projects.edges.map( e => e.node );
         return (
@@ -33,4 +33,4 @@ class ClientProjectList extends React.Component {
     }
 }
 
-export { ClientProjectList };
+export { ClientProjectTableWithLoadMore };

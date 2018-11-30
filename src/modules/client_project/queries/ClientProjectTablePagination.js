@@ -1,23 +1,22 @@
 import { graphql } from 'react-relay';
 import { createPaginationContainer } from 'react-relay';
 
-import { ClientProjectList as component } from '../components';
+import { ClientProjectTableWithLoadMore as component } from '../components';
 
 
-export const clientProjectListPaginationConnectionName = "Client_projects";
+export const clientProjectTablePaginationConnectionName = 'Client_projects';
 
-export const clientProjectListPaginationQuery = graphql`
-    query ClientProjectListPaginationQuery(
+export const clientProjectTablePaginationQuery = graphql`
+    query ClientProjectTablePaginationQuery(
         $clientID: ID!
         $count: Int!
         $cursor: String
     ) {
         client(id: $clientID) {
-            ...ClientProjectListPagination_client @arguments(count: $count, cursor: $cursor)
+            ...ClientProjectTablePagination_client @arguments(count: $count, cursor: $cursor)
         }
     }
 `;
-
 
 let connectionConfig = {
     direction: 'forward',
@@ -32,14 +31,14 @@ let connectionConfig = {
           clientID: fragmentVariables.clientID,
         };
     },
-    query: clientProjectListPaginationQuery
+    query: clientProjectTablePaginationQuery
 }
 
-let ClientProjectListPagination = createPaginationContainer(
+let ClientProjectTablePagination = createPaginationContainer(
     component,
     {
         client: graphql`
-            fragment ClientProjectListPagination_client on Client @argumentDefinitions(
+            fragment ClientProjectTablePagination_client on Client @argumentDefinitions(
                 count: {type: "Int", defaultValue: 10}
                 cursor: {type: "String"}
             ) {
@@ -66,4 +65,4 @@ let ClientProjectListPagination = createPaginationContainer(
     connectionConfig
 );
 
-export { ClientProjectListPagination }
+export { ClientProjectTablePagination }
