@@ -13,7 +13,8 @@ export const clientProjectTablePaginationQuery = graphql`
         $cursor: String
     ) {
         client(id: $clientID) {
-            ...ClientProjectTablePagination_client @arguments(count: $count, cursor: $cursor)
+            id
+            ...ClientProjectTablePagination_client @arguments(count: $count, cursor: $cursor, clientID: $clientID)
         }
     }
 `;
@@ -23,9 +24,11 @@ let connectionConfig = {
     getConnectionFromProps(props) {
       return props.client && props.client.projects;
     },
-    // getFragmentVariables: is not defined, because in default it 
-    // uses previous variables and total count 
+    // getFragmentVariables(prevVars, totalCount) => {}
+    //  Use for reading out the data from the store when re-rendering the component;
+    //  Not defined, because in default it uses previous variables and total count 
     getVariables(props, {count, cursor}, fragmentVariables) {
+        console.log("connectionConfig.getVariables", "fragmentVariables=", fragmentVariables, "props=", props)
         return {
           count,
           cursor,

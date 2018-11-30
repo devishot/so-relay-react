@@ -29,7 +29,7 @@ class ClientProjectTableWithLoadMore extends React.Component {
         this.props.relay.loadMore(
             modulesConfig.client_project.paginationPageSize,  // Fetch the next 10 feed items
             error => {
-                console.log(error);
+                error && console.error(error);
             },
         );
     }
