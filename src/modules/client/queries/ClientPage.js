@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { QueryRenderer } from 'react-relay';
 
 import environment from '../../../base/Environment';
+import { modulesConfig } from '../../../base/consts';
 import { 
     clientProjectTablePaginationQuery, 
     ClientProjectTablePagination
@@ -20,7 +21,7 @@ class ClientPage extends React.Component {
                     environment={environment}
                     variables={{
                         clientID,
-                        count: 20,
+                        count: modulesConfig.client_project.paginationPageSize,
                     }}
                     query={clientProjectTablePaginationQuery}
                     render={({error, props}) => {

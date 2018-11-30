@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { modulesConfig } from '../../../base/consts';
 import { ClientProjectTable } from '.';
 
 class ClientProjectTableWithLoadMore extends React.Component {
@@ -25,7 +27,7 @@ class ClientProjectTableWithLoadMore extends React.Component {
         }
 
         this.props.relay.loadMore(
-            10,  // Fetch the next 10 feed items
+            modulesConfig.client_project.paginationPageSize,  // Fetch the next 10 feed items
             error => {
                 console.log(error);
             },

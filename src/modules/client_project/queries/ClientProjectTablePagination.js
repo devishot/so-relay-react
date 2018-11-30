@@ -23,6 +23,8 @@ let connectionConfig = {
     getConnectionFromProps(props) {
       return props.client && props.client.projects;
     },
+    // getFragmentVariables: is not defined, because in default it 
+    // uses previous variables and total count 
     getVariables(props, {count, cursor}, fragmentVariables) {
         return {
           count,
