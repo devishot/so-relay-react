@@ -24,7 +24,7 @@ let connectionConfig = {
     getConnectionFromProps(props) {
       return props.client && props.client.projects;
     },
-    // getFragmentVariables(prevVars, totalCount) => {}
+    //  getFragmentVariables(prevVars, totalCount) => {}
     //  Use for reading out the data from the store when re-rendering the component;
     //  Not defined, because in default it uses previous variables and total count 
     getVariables(props, {count, cursor}, fragmentVariables) {
@@ -32,7 +32,8 @@ let connectionConfig = {
         return {
           count,
           cursor,
-          // userID isn't specified as an @argument for the fragment, but it should be a variable available for the fragment under the query root.
+          // clientID isn't specified as an @argument for the fragment, 
+          // but it should be a variable available for the fragment under the query root.
           clientID: fragmentVariables.clientID,
         };
     },

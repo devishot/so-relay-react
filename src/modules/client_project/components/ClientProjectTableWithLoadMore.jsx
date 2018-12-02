@@ -1,7 +1,9 @@
 import React from 'react';
 
 import { modulesConfig } from '../../../base/consts';
-import { ClientProjectTable } from '.';
+import { ClientProjectTable } from './';
+
+import Button from '@skbkontur/react-ui/Button';
 
 class ClientProjectTableWithLoadMore extends React.Component {
     render() {
@@ -11,10 +13,11 @@ class ClientProjectTableWithLoadMore extends React.Component {
                 <ClientProjectTable
                     data={data}
                 />
-                <button
-                    onClick={() => this._loadMore()}
-                    title="Load More"
-                />
+                {this.props.relay.hasMore() &&
+                    <Button onClick={() => this._loadMore()}>
+                        Показать больше результатов
+                    </Button>
+                }
             </div>
         );
     }
