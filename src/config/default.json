@@ -1,0 +1,20 @@
+{
+  "default": {
+    "modules": {
+      "client_project": {
+        "pagination_page_size": 10
+      }
+    }
+  },
+  "development": {
+    "host": "http://localhost:8081",
+    "modules": {
+      "client_project": {
+        "pagination_page_size": 2
+      }
+    }
+  },
+  "production": {
+    "host": "http://localhost:8081"
+  }
+}
