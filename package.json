@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:complete": "npm run-script prestart:graphql && npm run-script prestart && npm start",
+    "start:all": "npm run-script prestart:graphql && npm run-script prestart && npm start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

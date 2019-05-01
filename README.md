@@ -4,7 +4,7 @@
 > npm install -g graphql-cli
 
 ### Run:
-> npm run-script start:complete
+> npm run-script start:all
 
 
 ### It will do following:
