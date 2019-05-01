@@ -1,6 +1,6 @@
 import React from 'react';
 
-import config from '../../../config';
+import config from 'config';
 import { ClientProjectTable } from './';
 
 import Button from '@skbkontur/react-ui/Button';

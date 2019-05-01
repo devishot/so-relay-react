@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { SidePageForm, SidePageButton } from '.';
 import { wrapSidePageWithButton } from '../../_common/hoc/WrappedSidePageWithButton';
 
-import environment from '../../../base/Environment';
+import environment from 'base/Environment';
 import { addClientProjectCommit } from '../mutations/AddClientProjectMutation';
 
 
@@ -30,7 +30,7 @@ class AddClientProjectSidePage extends React.Component {
     render() {
         let WrappedSidePageWithButton = this.WrappedSidePageWithButton;
         return (
-            <WrappedSidePageWithButton 
+            <WrappedSidePageWithButton
                 project={this.getProjectData()}
                 onSubmit={this.onSubmit} />
         )

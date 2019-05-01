@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { QueryRenderer } from 'react-relay';
 
-import config from '../../../config';
-import environment from '../../../base/Environment';
+import config from 'config';
+import environment from 'base/Environment';
 import {
   clientProjectTablePaginationQuery,
   ClientProjectTablePagination

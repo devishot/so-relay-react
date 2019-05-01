@@ -4,7 +4,7 @@ import {
   RecordSource,
   Store,
 } from 'relay-runtime';
-import config from '../config';
+import config from 'config';
 
 function fetchQuery(
   operation,
