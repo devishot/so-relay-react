@@ -4,12 +4,16 @@ import {
   RecordSource,
   Store,
 } from 'relay-runtime';
+import config from '../config';
 
 function fetchQuery(
   operation,
   variables,
 ) {
-  return fetch('http://localhost:4000/graphql', {
+  const cfg = config.read(),
+        host = cfg.host;
+
+  return fetch(`${host}/graphql`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
